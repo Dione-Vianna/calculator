@@ -21,7 +21,7 @@ function calcOper(cal, valor1, valor2){
     var valor = parseFloat(valor1) + parseFloat(valor2);
   } else if (cal == "subtracao"){
     var valor = valor1 - valor2;
-  } else if (cal == "multiplicacao"){
+  } else if (cal == "multiplicar"){
     var valor = valor1 * valor2;
   } else {
     var valor = valor1/valor2;
