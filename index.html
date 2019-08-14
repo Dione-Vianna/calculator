@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="style.css">
+  <title>Calculadora</title>
+</head>
+<body>
+  <header>Calculadora</header>
+
+  <section>
+    <form name="calculadora" method="POST">
+      <div id="visor">
+        <input type="text" name="visor" id="visor">
+      </div>
+
+      <div id="btn">
+        <input type="button" value="9" class="numero" id="nove" onclick="valor(9)">
+        <input type="button" value="8" class="numero" id="oito" onclick="valor(8)">
+        <input type="button" value="7" class="numero" id="sete" onclick="valor(7)">
+        <input type="button" value="+" class="cal" id="sete" onclick="valor('adicao')">
+      </div>
+      <div id="btn">
+        <input type="button" value="6" class="numero" id="seis" onclick="valor(6)">
+        <input type="button" value="5" class="numero" id="cinco" onclick="valor(5)">
+        <input type="button" value="4" class="numero" id="quatro" onclick="valor(4)">
+        <input type="button" value="-" class="cal" id="quatro" onclick="valor('subtracao')">
+      </div>
+      <div id="btn">
+        <input type="button" value="3" class="numero" id="tres" onclick="valor(3)">
+        <input type="button" value="2" class="numero" id="dois" onclick="valor(2)">
+        <input type="button" value="1" class="numero" id="um" onclick="valor(1)">
+        <input type="button" value="x" class="cal" id="um" onclick="valor('multiplicar')">
+      </div>
+      <div id="btn">
+        <input type="button" value="Ac" class="numero" id="limpar" onclick="limpar()">
+        <input type="button" value="0" class="numero" id="zero" onclick="valor(0)">
+        <input type="button" value="=" class="numero" id="igual" onclick="calculo('resultado')">
+        <input type="button" value="/" class="cal" id="dividir" onclick="calculo('dividor')">
+      </div>
+    </form>
+  </section>
+  <footer>&copy; Mirai-Futuro Digital</footer>
+  <script src="main.js"></script>
+</body>
+</html>
