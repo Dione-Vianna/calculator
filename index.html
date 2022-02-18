@@ -1,18 +1,124 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="style.css">
+  <!-- <link rel="stylesheet" href="style.css"> -->
+  <script src="https://cdn.tailwindcss.com"></script>
   <title>Calculadora</title>
 </head>
-<body>
-  <header>
-      <h1>Calculadora</h1>
-  </header>
 
-  <section>
+<body>
+
+  <form name="calculadora" method="POST">
+    <div class="bg-gray-200 w-screen h-screen flex flex-col justify-center items-center">
+      <div class="w-64 h-auto bg-white rounded-2xl shadow-xl border-4 border-gray-100">
+        <div class="w-auto mx-3 my-2 h-6 flex justify-between">
+          <div class="text-sm">
+            <input />
+            08:57
+          </div>
+          <div class="flex items-center text-xs space-x-1">
+            <i class="fas fa-signal"></i>
+            <i class="fas fa-wifi"></i>
+            <i class="fas fa-battery-three-quarters text-sm"></i>
+          </div>
+        </div>
+        <div class="w-auto m-3 h-28 text-right space-y-2 py-2">
+          <!-- <div class="text-gray-700">45 + (1250 x 100) / 100</div> -->
+          <div id="visor">
+            <!-- <input type="text" name="visor" id="visor"> -->
+            <input type="text" name="visor" id="visor" class="text-black font-bold text-3xl w-48">
+          </div>
+        </div>
+        <div class="w-auto m-1 h-auto mb-2">
+          <div class="m-2 flex justify-between">
+            <button type="button" value="Ac" id="limpar" onclick="Limpar()"
+              class="bg-yellow-100 shadow-md rounded-2xl w-12 h-12 text-yellow-600 font-medium flex justify-center items-center">
+              C</button>
+            <div
+              class="bg-gray-200 shadow-md rounded-2xl w-12 h-12 text-black font-medium flex justify-center items-center">
+              (</div>
+            <div
+              class="bg-gray-200 shadow-md rounded-2xl w-12 h-12 text-black font-medium flex justify-center items-center">
+              )</div>
+            <button type="button" value="/" id="dividir" onclick="calculo('dividor')"
+              class="bg-yellow-500 shadow-md rounded-2xl w-12 h-12 text-white font-medium text-xl flex justify-center items-center">
+              /</button>
+          </div>
+          <div class="m-2 flex justify-between">
+            <button type="button" value="7" id="nove" onclick="valor(7)"
+              class="bg-gray-200 shadow-md rounded-2xl w-12 h-12 text-black font-medium flex justify-center items-center">
+              7</button>
+            <button type="button" value="8" id="nove" onclick="valor(8)"
+              class="bg-gray-200 shadow-md rounded-2xl w-12 h-12 text-black font-medium flex justify-center items-center">
+              8</button>
+            <button type="button" value="9" id="nove" onclick="valor(9)"
+              class="bg-gray-200 shadow-md rounded-2xl w-12 h-12 text-black font-medium flex justify-center items-center">
+              9</button>
+            <button type="button" value="x" id="multiplicar" onclick="calculo('multiplicar')"
+              class="bg-yellow-500 shadow-md rounded-2xl w-12 h-12 text-white font-medium text-xl flex justify-center items-center">
+              x</button>
+          </div>
+          <div class="m-2 flex justify-between">
+            <button type="button" value="4" id="nove" onclick="valor(4)"
+              class="bg-gray-200 shadow-md rounded-2xl w-12 h-12 text-black font-medium flex justify-center items-center">
+              4</button>
+            <button type="button" value="5" id="nove" onclick="valor(5)"
+              class="bg-gray-200 shadow-md rounded-2xl w-12 h-12 text-black font-medium flex justify-center items-center">
+              5</button>
+            <button type="button" value="6" id="nove" onclick="valor(6)"
+              class="bg-gray-200 shadow-md rounded-2xl w-12 h-12 text-black font-medium flex justify-center items-center">
+              6</button>
+            <button type="button" value="-" id="subtracao" onclick="calculo('subtracao')"
+              class="bg-yellow-500 shadow-md rounded-2xl w-12 h-12 text-white font-medium text-xl flex justify-center items-center">
+              -</button>
+          </div>
+          <div class="m-2 flex justify-between">
+            <button type="button" value="1" id="nove" onclick="valor(1)"
+              class="bg-gray-200 shadow-md rounded-2xl w-12 h-12 text-black font-medium flex justify-center items-center">
+              1</button>
+            <button type="button" value="2" id="nove" onclick="valor(2)"
+              class="bg-gray-200 shadow-md rounded-2xl w-12 h-12 text-black font-medium flex justify-center items-center">
+              2</button>
+            <button type="button" value="3" id="nove" onclick="valor(3)"
+              class="bg-gray-200 shadow-md rounded-2xl w-12 h-12 text-black font-medium flex justify-center items-center">
+              3</button>
+            <button type="button" value="+" id="adicao" onclick="calculo('adicao')"
+              class="bg-yellow-500 shadow-md rounded-2xl w-12 h-12 text-white font-medium text-xl flex justify-center items-center">
+              +</button>
+          </div>
+          <div class="m-2 flex justify-between">
+            <button type="button" value="0" id="zero" onclick="valor(0)"
+              class="bg-gray-200 shadow-md rounded-2xl w-full h-12 text-black font-medium flex justify-center items-center">
+              0</button>
+            <div class="flex w-full ml-3 justify-between">
+              <div
+                class="bg-gray-200 shadow-md rounded-2xl w-12 h-12 text-black font-medium flex justify-center items-center">
+                .</div>
+              <button type="button" value="=" id="igual" onclick="calculo('resultado')"
+                class="bg-green-500 shadow-md rounded-2xl w-12 h-12 text-white font-medium text-xl flex justify-center items-center">
+                =</button>
+            </div>
+          </div>
+          <div class="flex justify-center mt-5">
+            <div class="w-20 h-1 bg-gray-100 rounded-l-xl rounded-r-xl"></div>
+          </div>
+        </div>
+      </div>
+  </form>
+
+  <footer>
+    <p>&copy; Mirai-Futuro Digital</p>
+  </footer>
+  </div>
+  <script src="main.js"></script>
+
+
+
+  <!-- <section>
     <form name="calculadora" method="POST">
       <div id="visor">
         <input type="text" name="visor" id="visor">
@@ -42,10 +148,8 @@
         <input type="button" value="/" class="cal" id="dividir" onclick="calculo('dividor')">
       </div>
     </form>
-  </section>
-  <footer>
-    <p>&copy; Mirai-Futuro Digital</p>
-  </footer>
-  <script src="main.js"></script>
+  </section> -->
+
 </body>
+
 </html>
