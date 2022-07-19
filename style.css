@@ -1,30 +1,26 @@
-*
-{
+* {
   margin: 0;
   padding: 0;
   text-decoration: none;
-  outline:none;
+  outline: none;
 
 }
 
-body
-{
+body {
   background: #1b1b1bda;
   font: normal 20pt Arial;
   text-align: center;
   margin: 10px;
 }
 
-header
-{
+header {
   margin: 10px;
   padding: 3px;
   border: 5px;
   color: #fff;
 }
 
-section
-{
+section {
   background: #fff;
   border-radius: 10px;
   width: 350px;
@@ -34,10 +30,9 @@ section
   box-shadow: 3px 3px 10px rgba(40, 40, 40, 0.7);
 }
 
-div#visor input 
-{
+div#visor input {
   font: normal 30pt Arial;
-  width: 300px;
+  width: 220px;
   height: 60px;
   margin: 10px;
   text-align: end;
@@ -45,8 +40,7 @@ div#visor input
   background: #fff;
 }
 
-div#btn input
-{
+div#btn input {
   color: #fff;
   font: normal 25pt Arial;
   margin: 6px;
@@ -57,13 +51,11 @@ div#btn input
   background-color: #5e0b0bea;
 }
 
-div#btn input:active
-{
+div#btn input:active {
   background-color: #110101ea;
 }
 
-footer
-{
+footer {
   margin-top: 20px;
   color: #fff;
   text-align: center;

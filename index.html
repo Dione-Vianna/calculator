@@ -5,20 +5,21 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <!-- <link rel="stylesheet" href="style.css"> -->
+  <link rel="stylesheet" href="style.css">
   <script src="https://cdn.tailwindcss.com"></script>
+  <script src="./hours.js" defer ></script>
   <title>Calculadora</title>
 </head>
 
 <body>
 
   <form name="calculadora" method="POST">
-    <div class="bg-gray-200 w-screen h-screen flex flex-col justify-center items-center">
+    <div class="bg-gray-800 w-screen h-screen flex flex-col justify-center items-center">
       <div class="w-64 h-auto bg-white rounded-2xl shadow-xl border-4 border-gray-100">
         <div class="w-auto mx-3 my-2 h-6 flex justify-between">
-          <div class="text-sm">
-            <input />
-            08:57
+          <div class="text-sm" >
+            <!-- <input  /> -->
+            <p id="time"></p>
           </div>
           <div class="flex items-center text-xs space-x-1">
             <i class="fas fa-signal"></i>
@@ -44,7 +45,7 @@
             <div
               class="bg-gray-200 shadow-md rounded-2xl w-12 h-12 text-black font-medium flex justify-center items-center">
               )</div>
-            <button type="button" value="/" id="dividir" onclick="calculo('dividor')"
+            <button type="button" value="/" id="dividir" onclick="calculo('/')"
               class="bg-yellow-500 shadow-md rounded-2xl w-12 h-12 text-white font-medium text-xl flex justify-center items-center">
               /</button>
           </div>
@@ -58,7 +59,7 @@
             <button type="button" value="9" id="nove" onclick="valor(9)"
               class="bg-gray-200 shadow-md rounded-2xl w-12 h-12 text-black font-medium flex justify-center items-center">
               9</button>
-            <button type="button" value="x" id="multiplicar" onclick="calculo('multiplicar')"
+            <button type="button" value="x" id="multiplicar" onclick="calculo('*')"
               class="bg-yellow-500 shadow-md rounded-2xl w-12 h-12 text-white font-medium text-xl flex justify-center items-center">
               x</button>
           </div>
@@ -72,7 +73,7 @@
             <button type="button" value="6" id="nove" onclick="valor(6)"
               class="bg-gray-200 shadow-md rounded-2xl w-12 h-12 text-black font-medium flex justify-center items-center">
               6</button>
-            <button type="button" value="-" id="subtracao" onclick="calculo('subtracao')"
+            <button type="button" value="-" id="subtracao" onclick="calculo('-')"
               class="bg-yellow-500 shadow-md rounded-2xl w-12 h-12 text-white font-medium text-xl flex justify-center items-center">
               -</button>
           </div>
@@ -86,7 +87,7 @@
             <button type="button" value="3" id="nove" onclick="valor(3)"
               class="bg-gray-200 shadow-md rounded-2xl w-12 h-12 text-black font-medium flex justify-center items-center">
               3</button>
-            <button type="button" value="+" id="adicao" onclick="calculo('adicao')"
+            <button type="button" value="+" id="adicao" onclick="calculo('+')"
               class="bg-yellow-500 shadow-md rounded-2xl w-12 h-12 text-white font-medium text-xl flex justify-center items-center">
               +</button>
           </div>
@@ -97,10 +98,12 @@
             <div class="flex w-full ml-3 justify-between">
               <div
                 class="bg-gray-200 shadow-md rounded-2xl w-12 h-12 text-black font-medium flex justify-center items-center">
-                .</div>
+                .
+              </div>
               <button type="button" value="=" id="igual" onclick="calculo('resultado')"
                 class="bg-green-500 shadow-md rounded-2xl w-12 h-12 text-white font-medium text-xl flex justify-center items-center">
-                =</button>
+                =
+              </button>
             </div>
           </div>
           <div class="flex justify-center mt-5">
@@ -111,7 +114,7 @@
   </form>
 
   <footer>
-    <p>&copy; Mirai-Futuro Digital</p>
+    <!-- <p>&copy; Mirai-Futuro Digital</p> -->
   </footer>
   </div>
   <script src="main.js"></script>
